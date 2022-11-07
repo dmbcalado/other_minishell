@@ -1,0 +1,18 @@
+O QUE FALTA FAZER PARA JA
+
+-> Ja trato na perfeicao o alocar para o input e o output num comando.
+
+-> Mas quando sao varios outputs ou varios appends, ele caga em todos
+(mas abre todos sem nada la dentro). eu ja pego bem no ultimo e meto lhe o output que se quer
+agora e so criar os garbage files que fizeram "o caminho ate la".
+
+-> O input e a mesma coisa, so o ultimo e que vai ser o input mas o path tem que ser valido,
+se o ficheiro nao existir entao nao pode receber o input final.
+
+-> Dar free as redirecoes.
+
+-> Perceber o heredoc e os appends.
+
+A SEGUIR
+
+toda a situacao da variavel do env, aceitar variaveis de env, etc.
