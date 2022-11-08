@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmendonc <dmendonc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratinhosujo <ratinhosujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 22:01:46 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/09/22 23:22:38 by dmendonc         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:55:00 by ratinhosujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	heredoc(t_data *data, int index)
 			free (buffer);
 		}
 	}
-	
+	data->ids.inp_list[index] = open(".heredoc_tmp", O_RDONLY);
 	if (data->ids.inp_list[index] < 0)
-		printf("its here tho");
+		write(2, "Error on heredoc. Exiting.\n", 27);
 }
 
 int	compare_key(t_data *data, char *buffer, int len)

@@ -1,2 +1,15 @@
-Mas os versus depois frutos do sonho e dessa mesma vida
-Depois de 3 garrafas de vinho, ou 20 palavras que eu não adivinho
+explicacao redirecoes
+gnl
+header.h
+infile2.txt
+infile.txt
+libft
+Makefile
+minishell
+oquefaltafazer.txt
+outfile.txt
+output2.txt
+output.txt
+README.md
+srcs
+Subject.pdf

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfreire <anfreire@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ratinhosujo <ratinhosujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 22:14:03 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/10/28 00:28:26 by anfreire         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:47:05 by ratinhosujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	free_line_info(t_data *data)
 	int i;
 
 	i = -1;
+	printf ("%d\n", data->redir.input_n);
+	printf ("%d\n", data->redir.output_n);
 	while (data->par_line[++i])
 		free (data->par_line[i]);
 	free(data->par_line);

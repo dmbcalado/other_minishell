@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfreire <anfreire@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ratinhosujo <ratinhosujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:31:48 by dmendonc          #+#    #+#             */
-/*   Updated: 2022/11/07 15:58:12 by anfreire         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:57:48 by ratinhosujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
 //------------------------------------------------------------------------------
-// args: i as par_line[i], index has in wich cmd index, flag has flag = 1 : </>
-//																flag = 2 : <</>>
+// args: i as par_line[i]
+// index has in wich cmd index, flag has flag = 1 : </>
+//										flag = 2 : <</>>
 // task: sets all counters to zero,
 //------------------------------------------------------------------------------
 
@@ -38,12 +39,14 @@ int	redirect(t_data *data)
 		{
 			ret = redir_detector (data, data->par_line[i]);
 			if (ret == 1)
-				break;
+			{
+				i++;
+				break ;
+			}
 			if (ret > 1)
 			{
 				if (ret < 4 && flag_i == 0)
 				{
-					printf("ret %d\n", ret);
 					if(bridge_infiles(data, index, i) < 0)
 						return(-1);
 					if (ret == 2)
@@ -106,7 +109,7 @@ int	exec_redirect(t_data *data, int index, int i)
 		{
 			printf("Error: the file %s does not exist.", data->redir.input[index]);
 			return (-1);
-		}	
+		}
 	}
 	if (save == 4)	//output
 	{
@@ -116,8 +119,6 @@ int	exec_redirect(t_data *data, int index, int i)
 			printf("Error: the file %s had issues on open().",data->redir.output[index]);
 			return (-1);
 		}
-		else
-			printf("sucessefully opened %s\n",data->redir.output[index]);
 	}
 	if (save == 5)	//output
 	{
@@ -127,8 +128,6 @@ int	exec_redirect(t_data *data, int index, int i)
 			printf("Error: the file %s had issues on open().",data->redir.output[index]);
 			return (-1);
 		}
-		else
-			printf("sucessefully opened %s\n\n",data->redir.output[index]);
 	}
 	return (0);
 }
